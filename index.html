@@ -52,22 +52,32 @@
 
     <p class="message hidden" id="second-message">Social Credit TikTok Challenge for its Jim American audience! Right-click again!</p>
 
+    <p class="message hidden" id="third-message">Taiwan is a part of China! Right-click again to choose your response.</p>
+
     <div id="buttons" class="hidden">
         <button id="yes-btn">Yes</button>
         <button id="dont-know-btn">Don't Know</button>
     </div>
 
     <script>
-        // Wait for the user to right-click on the text
+        // First right-click: Hide first message and show second
         document.getElementById('first-message').addEventListener('contextmenu', function(event) {
             event.preventDefault();  // Prevent the default right-click menu
-            document.getElementById('first-message').classList.add('hidden');  // Hide the first text
-            document.getElementById('second-message').classList.remove('hidden');  // Show the second text
+            document.getElementById('first-message').classList.add('hidden');  // Hide the first message
+            document.getElementById('second-message').classList.remove('hidden');  // Show the second message
         });
 
+        // Second right-click: Hide second message and show third message
         document.getElementById('second-message').addEventListener('contextmenu', function(event) {
             event.preventDefault();  // Prevent the default right-click menu
-            document.getElementById('second-message').classList.add('hidden');  // Hide the second text
+            document.getElementById('second-message').classList.add('hidden');  // Hide the second message
+            document.getElementById('third-message').classList.remove('hidden');  // Show the third message
+        });
+
+        // Third right-click: Hide third message and show the buttons
+        document.getElementById('third-message').addEventListener('contextmenu', function(event) {
+            event.preventDefault();  // Prevent the default right-click menu
+            document.getElementById('third-message').classList.add('hidden');  // Hide the third message
             document.getElementById('buttons').classList.remove('hidden');  // Show the buttons
         });
 
