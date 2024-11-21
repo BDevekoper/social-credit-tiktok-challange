@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Credit TikTok Challenge</title>
+    <style>
+        /* Basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 50px;
+        }
+
+        .message {
+            margin-top: 30px;
+            font-size: 20px;
+            color: #333;
+            cursor: pointer;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #buttons {
+            margin-top: 20px;
+            display: none;
+        }
+
+        #buttons button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Social Credit TikTok Challenge!</h1>
+    <p class="message" id="first-message">Right-click me to see the next message!</p>
+
+    <p class="message hidden" id="second-message">Social Credit TikTok Challenge for its Jim American audience! Right-click again!</p>
+
+    <div id="buttons" class="hidden">
+        <button id="yes-btn">Yes</button>
+        <button id="dont-know-btn">Don't Know</button>
+    </div>
+
+    <script>
+        // Wait for the user to right-click on the text
+        document.getElementById('first-message').addEventListener('contextmenu', function(event) {
+            event.preventDefault();  // Prevent the default right-click menu
+            document.getElementById('first-message').classList.add('hidden');  // Hide the first text
+            document.getElementById('second-message').classList.remove('hidden');  // Show the second text
+        });
+
+        document.getElementById('second-message').addEventListener('contextmenu', function(event) {
+            event.preventDefault();  // Prevent the default right-click menu
+            document.getElementById('second-message').classList.add('hidden');  // Hide the second text
+            document.getElementById('buttons').classList.remove('hidden');  // Show the buttons
+        });
+
+        // Button actions
+        document.getElementById('yes-btn').addEventListener('click', function() {
+            alert("You clicked Yes!");
+        });
+
+        document.getElementById('dont-know-btn').addEventListener('click', function() {
+            alert("You clicked Don't Know!");
+        });
+    </script>
+</body>
+</html>
