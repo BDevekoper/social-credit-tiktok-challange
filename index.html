@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        #mainTitle {
+            font-size: 24px;
+            margin-top: 20px;
+            cursor: context-menu;
+        }
+        #secondTitle, #question, #result {
+            display: none;
+            font-size: 24px;
+            margin-top: 20px;
+        }
+        #buttons {
+            display: none;
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="mainTitle">Social Credit TikTok Challenge</div>
+    <div id="secondTitle">Social Credit TikTok Challenge (For Jim's American Audience)</div>
+    <div id="question">Is Taiwan a part of China?</div>
+    <div id="buttons">
+        <button onclick="void(0)">Yes</button>
+        <button onclick="showResult()">I don't know</button>
+    </div>
+    <div id="result">⚡ Lightning strikes and you die ⚡</div>
+
+    <script>
+        document.getElementById('mainTitle').addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            this.style.display = 'none';
+            document.getElementById('secondTitle').style.display = 'block';
+        });
+
+        document.getElementById('secondTitle').addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            document.getElementById('question').style.display = 'block';
+            document.getElementById('buttons').style.display = 'block';
+        });
+
+        function showResult() {
+            document.getElementById('result').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
